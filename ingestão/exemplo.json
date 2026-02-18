@@ -1,0 +1,142 @@
+{
+    "timestamp": "2026-02-18_10:55:24",
+    "cpu": {
+        "physical_cores": 4,
+        "total_cores": 8,
+        "cpu_usage_percent_total": 11.2,
+        "cpu_usage_percent_per_core": [
+            13.3,
+            10.1,
+            7.9,
+            11.5,
+            12.2,
+            10.3,
+            14.4,
+            10.0
+        ],
+        "cpu_freq": {
+            "current_mhz": 799.4778750000002,
+            "min_mhz": 400.0,
+            "max_mhz": 4000.0
+        }
+    },
+    "memory": {
+        "virtual_memory": {
+            "total": 8235253760,
+            "available": 1564352512,
+            "used": 6670901248,
+            "percent": 81.0
+        },
+        "swap_memory": {
+            "total": 2147479552,
+            "used": 282980352,
+            "free": 1864499200,
+            "percent": 13.2
+        }
+    },
+    "disk": {
+        "disk_io": {
+            "read_bytes": 6588775424,
+            "write_bytes": 8897844224,
+            "read_count": 375728,
+            "write_count": 118489
+        }
+    },
+    "network": {
+        "bytes_sent": 34449816,
+        "bytes_recv": 135496373,
+        "packets_sent": 102065,
+        "packets_recv": 162152
+    },
+    "temperatures": {
+        "acpitz": [
+            {
+                "label": "",
+                "current": 25.0,
+                "high": 107.0,
+                "critical": 107.0
+            }
+        ],
+        "pch_skylake": [
+            {
+                "label": "",
+                "current": 45.5,
+                "high": null,
+                "critical": null
+            }
+        ],
+        "coretemp": [
+            {
+                "label": "Package id 0",
+                "current": 49.0,
+                "high": 100.0,
+                "critical": 100.0
+            },
+            {
+                "label": "Core 0",
+                "current": 48.0,
+                "high": 100.0,
+                "critical": 100.0
+            },
+            {
+                "label": "Core 1",
+                "current": 47.0,
+                "high": 100.0,
+                "critical": 100.0
+            },
+            {
+                "label": "Core 2",
+                "current": 48.0,
+                "high": 100.0,
+                "critical": 100.0
+            },
+            {
+                "label": "Core 3",
+                "current": 47.0,
+                "high": 100.0,
+                "critical": 100.0
+            }
+        ],
+        "dell_smm": [
+            {
+                "label": "CPU",
+                "current": 50.0,
+                "high": null,
+                "critical": null
+            },
+            {
+                "label": "Ambient",
+                "current": 43.0,
+                "high": null,
+                "critical": null
+            },
+            {
+                "label": "SODIMM",
+                "current": 41.0,
+                "high": null,
+                "critical": null
+            },
+            {
+                "label": "GPU",
+                "current": 30.0,
+                "high": null,
+                "critical": null
+            }
+        ],
+        "iwlwifi_1": [
+            {
+                "label": "",
+                "current": 40.0,
+                "high": null,
+                "critical": null
+            }
+        ]
+    },
+    "battery": {
+        "present": true,
+        "percent": 98.9539748953975,
+        "plugged_in": false,
+        "secs_left": 3475,
+        "time_left_formatted": "0:57:55"
+    }
+}
