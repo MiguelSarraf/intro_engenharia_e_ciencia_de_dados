@@ -15,3 +15,11 @@ env:
 requirements: requirements.txt
 	pip3 install -r requirements.txt
 
+gera_info_sistema:
+	python3 ingestão/gera_dados.py
+
+ingere_info_sistema:
+	python3 ingestão/processa_json.py
+
+ingere_inmet: parametros.txt
+	cat parametros.txt | python3 ingestão/baixa_inmet.py
