@@ -22,7 +22,21 @@ O processo de ingestão definido consiste em 2 etapas:
 
 Para a primeira parte, foram criados 2 scripts para simular uma ingestão por fluxo. Um script [simula a emissão dos dados dos sensores, escrevendo em formato JSON](https://github.com/MiguelSarraf/intro_engenharia_e_ciencia_de_dados/blob/main/ingest%C3%A3o/gera_dados.py) e o outro [lê diversos JSONs e salvar os dados em um arquivo parquet](https://github.com/MiguelSarraf/intro_engenharia_e_ciencia_de_dados/blob/main/ingest%C3%A3o/processa_json.py). Este segundo script é o script de ingestão propriamente dito, conforme estudado na teoria.
 
-Os dois códigos foram agendados para serem executados através de cron jobs no sistema:
+Para rodar os scripts, basta chamá-los via python e os resultados serão escritos na pasta "resultados" dentro do diretório "ingestão" deste projeto.
+
+```
+python3 ingestão/gera_dados.py
+python3 ingestão/processa_json.py
+```
+
+Ou ainda, é possível fazer estas execuções através de comando `make`.
+
+```
+make gera_info_sistema
+make ingere_info_sistema
+```
+
+Para fins de geração de dados de teste para o curso, os dois códigos foram agendados para serem executados através de cron jobs no sistema:
 
 ```
 */2 * * * * python3 <caminho_para_pasta>/intro_engenharia_e_ciencia_de_dados/ingestão/gera_dados.py
@@ -39,4 +53,18 @@ Baixando os dados do Mirante de Santana (São Paulo) para o ano de 2026:
 
 ```
 python3 ingestão/baixa_inmet.py A701 2026
+```
+
+Se estes valores não forem fornecidos na linha de comando, dois prompts serão exibidos para que os valores sejam passados durante a execução.
+
+Ainda é possível criar um arquivo `parametros.txt` contendo o código da estação e o ano em linhas consecutivas e executar a rotina de extração via comando `make`.
+
+```
+[parametros.txt]
+A701
+2026
+```
+
+```
+make ingere_inmet
 ```
