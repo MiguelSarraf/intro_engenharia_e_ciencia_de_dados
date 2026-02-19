@@ -32,10 +32,12 @@ def baixar_dados(estacao, ano):
 JSON_FOLDER = os.environ.get("PASTA_INGESTAO")
 PARQUET_OUTPUT = JSON_FOLDER+"dados_estacao.parquet"
 
-assert len(sys.argv) == 3, "Código da estação e ano são mandatórios para extração"
-
-estacao = sys.argv[1]
-ano = sys.argv[2]
+if len(sys.argv) != 3:
+    estacao = input("Qual o código da estação a ser extraída? ")
+    ano = input("Qual ano para extração? ")
+else:
+    estacao = sys.argv[1]
+    ano = sys.argv[2]
 
 assert ano.isnumeric(), "Ano deve ser um valor numérico"
 

@@ -1,4 +1,5 @@
 intro_venv/
 ingestão/resultados/*
 environment_variables.sh
+parametros.txt
 */__pycache__/*
