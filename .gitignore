@@ -1,5 +1,6 @@
 intro_venv/
 ingestão/resultados/*
+ingestão/erros/*
 environment_variables.sh
 parametros.txt
 */__pycache__/*
