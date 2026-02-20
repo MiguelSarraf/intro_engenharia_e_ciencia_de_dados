@@ -11,6 +11,7 @@ env:
 	chmod +x environment_variables.sh
 
 	mkdir -p $(shell pwd)/ingestão/resultados/
+	mkdir -p $(shell pwd)/ingestão/erros/
 
 requirements: requirements.txt
 	pip3 install -r requirements.txt

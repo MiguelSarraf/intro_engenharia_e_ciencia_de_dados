@@ -47,7 +47,11 @@ def processa_pasta_json(pasta, parquet):
         caminho_completo = os.path.join(pasta, nome)
 
         with open(caminho_completo, "r") as arquivo:
-            data = json.load(arquivo)
+            try:
+                data = json.load(arquivo)
+            except:
+                print(f"Erro ao ler o JSON {caminho_completo}")
+                os.rename(caminho_completo, caminho_completo.replace("resultados", "erros"))
 
         novos_dados = achata_json(data)
         novos_dados["janela"] = janela
@@ -66,7 +70,10 @@ def processa_pasta_json(pasta, parquet):
 
     # Remover JSONs processados
     for nome in jsons:
-        os.remove(os.path.join(pasta, nome))
+        try:
+            os.remove(os.path.join(pasta, nome))
+        except:
+            pass
 
 
 JSON_FOLDER = os.environ.get("PASTA_INGESTAO")
