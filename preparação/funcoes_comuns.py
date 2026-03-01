@@ -17,7 +17,6 @@ def transforma_colunas_float(df, df_nome):
     try:
       df[coluna] = df[coluna].astype(float)
     except:
-      # df[coluna] = "0" + df[coluna].astype(str)
       df[coluna] = df[coluna].str.replace(",", ".")
       df[coluna] = df[coluna].astype(float)
   return df
