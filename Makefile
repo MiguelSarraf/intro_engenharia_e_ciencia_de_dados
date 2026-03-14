@@ -42,6 +42,6 @@ prepara: ingestão/resultados/system_monitoring.parquet ingestão/resultados/dad
 
 enriquece:
 	MYSQL_USER=$(USUARIO_ENGENHARIA) MYSQL_PWD=$(USUARIO_ENGENHARIA_SENHA) mysql -u $(USUARIO_ENGENHARIA) < enriquecimento/dimensoes.sql
-	MYSQL_USER=$(USUARIO_ENGENHARIA) MYSQL_PWD=$(USUARIO_ENGENHARIA_SENHA) mysql -u $(USUARIO_ENGENHARIA) < enriquecimento/metricas_hora.sql
+	MYSQL_USER=$(USUARIO_ENGENHARIA) MYSQL_PWD=$(USUARIO_ENGENHARIA_SENHA) mysql -u $(USUARIO_ENGENHARIA) < enriquecimento/clima_hora.sql
 	MYSQL_USER=$(USUARIO_ENGENHARIA) MYSQL_PWD=$(USUARIO_ENGENHARIA_SENHA) mysql -u $(USUARIO_ENGENHARIA) < enriquecimento/dados_maquina.sql
 	MYSQL_USER=$(USUARIO_ENGENHARIA) MYSQL_PWD=$(USUARIO_ENGENHARIA_SENHA) mysql -u $(USUARIO_ENGENHARIA) < enriquecimento/maquina_clima.sql

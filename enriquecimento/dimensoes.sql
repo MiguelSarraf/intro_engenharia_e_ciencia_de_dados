@@ -8,5 +8,5 @@ INSERT INTO intro_dados_ouro.dim_metrica (id, nome) VALUES (6, "Direção do ven
 INSERT INTO intro_dados_ouro.dim_metrica (id, nome) VALUES (7, "Rajada do vento");
 INSERT INTO intro_dados_ouro.dim_metrica (id, nome) VALUES (8, "Velocidade do vento");
 
-INSERT INTO intro_dados_ouro.dim_datahora (datahora, mes, ano, hora)
-SELECT datahora, MONTH(datahora) as mes, YEAR(datahora) as ano, HOUR(datahora) as hora FROM intro_dados_prata.dados_meteorologicos;
+INSERT INTO intro_dados_ouro.dim_datahora (datahora, dia, mes, ano, hora)
+SELECT datahora, DAY(datahora) as dia, MONTH(datahora) as mes, YEAR(datahora) as ano, HOUR(datahora) as hora FROM intro_dados_prata.dados_meteorologicos;

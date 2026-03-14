@@ -1,6 +1,6 @@
 SET @NUM_CLASSES = (SELECT ROUND(POWER(COUNT(*),0.5),0) FROM intro_dados_prata.dados_meteorologicos);
 
-INSERT INTO intro_dados_ouro.metricas_hora (datahora, metrica, valor, classe)
+INSERT INTO intro_dados_ouro.clima_hora (datahora, metrica, valor, classe)
 SELECT * FROM (
 	SELECT
 		datahora,
