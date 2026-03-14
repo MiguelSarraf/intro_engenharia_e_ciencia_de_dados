@@ -20,6 +20,10 @@ env:
 	sudo mysql -u root < preparação/cria_tabelas.sql
 	sudo mysql -u root < preparação/cria_permissoes.sql
 
+	sudo mysql -u root < enriquecimento/cria_acesso.sql
+	sudo mysql -u root < enriquecimento/cria_tabelas.sql
+	sudo mysql -u root < enriquecimento/cria_permissoes.sql
+
 requirements: requirements.txt
 	pip3 install -r requirements.txt
 
@@ -35,3 +39,9 @@ ingere_inmet: parametros.txt
 prepara: ingestão/resultados/system_monitoring.parquet ingestão/resultados/dados_estacao.parquet
 	python3 preparação/prepara_monitoramento_sistema.py
 	python3 preparação/prepara_condicoes_meteorologicas.py
+
+enriquece:
+	MYSQL_USER=$(USUARIO_ENGENHARIA) MYSQL_PWD=$(USUARIO_ENGENHARIA_SENHA) mysql -u $(USUARIO_ENGENHARIA) < enriquecimento/dimensoes.sql
+	MYSQL_USER=$(USUARIO_ENGENHARIA) MYSQL_PWD=$(USUARIO_ENGENHARIA_SENHA) mysql -u $(USUARIO_ENGENHARIA) < enriquecimento/metricas_hora.sql
+	MYSQL_USER=$(USUARIO_ENGENHARIA) MYSQL_PWD=$(USUARIO_ENGENHARIA_SENHA) mysql -u $(USUARIO_ENGENHARIA) < enriquecimento/dados_maquina.sql
+	MYSQL_USER=$(USUARIO_ENGENHARIA) MYSQL_PWD=$(USUARIO_ENGENHARIA_SENHA) mysql -u $(USUARIO_ENGENHARIA) < enriquecimento/maquina_clima.sql
