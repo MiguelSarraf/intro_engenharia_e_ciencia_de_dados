@@ -32,6 +32,11 @@ dados_meteorologicos_extremos = dados_meteorologicos_extremos.rename(columns=col
 dados_meteorologicos = transforma_colunas(dados_meteorologicos, nameof(dados_meteorologicos), formato_datahora="%Y/%m/%d%H%M")
 dados_meteorologicos_extremos = transforma_colunas(dados_meteorologicos_extremos, nameof(dados_meteorologicos_extremos), formato_datahora="%Y/%m/%d%H%M")
 
+# Antes de ser realizada a limpeza, é preciso ajustar as datas, que estão deslocadas em 3h por conta do fuso horário
+
+dados_meteorologicos["datahora"] = dados_meteorologicos["datahora"] + pd.Timedelta(hours=-3)
+dados_meteorologicos_extremos["datahora"] = dados_meteorologicos_extremos["datahora"] + pd.Timedelta(hours=-4)
+
 # Limpeza
 
 dados_meteorologicos["radiacao"] = dados_meteorologicos["radiacao"].fillna(0)
